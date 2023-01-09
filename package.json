@@ -13,6 +13,7 @@
     "core-js": "^3.8.3",
     "echarts": "^5.4.1",
     "roboto-fontface": "*",
+    "vega-embed": "^6.21.0",
     "vue": "^3.2.13",
     "vue-echarts": "^6.5.0",
     "vue-router": "^4.1.6",
