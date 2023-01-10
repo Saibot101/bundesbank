@@ -1,89 +1,172 @@
 <template>
-    <v-chart class="chart" :option="option" />
-  </template>
-  
-  <script>
-  import { use } from "echarts/core";
-  import { CanvasRenderer } from "echarts/renderers";
-  import { PieChart } from "echarts/charts";
-  import {
-    TitleComponent,
-    TooltipComponent,
-    LegendComponent,
-  } from "echarts/components";
-  import VChart from "vue-echarts";
-  
-  use([
-    CanvasRenderer,
-    PieChart,
-    TitleComponent,
-    TooltipComponent,
-    LegendComponent,
-  ]);
-  
-  export default {
-    name: "EChart",
-    components: {
-      VChart,
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col class="d-flex flex-column justify-center align-center">
+        Stand 2018
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-chart :option="option" />
+        </v-card>
+      </v-col>
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-chart :option="option2" />
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+
+</template>
+
+<script>
+import { use } from "echarts/core";
+import { CanvasRenderer } from "echarts/renderers";
+import { GridComponent } from 'echarts/components';
+import { PieChart, LineChart } from "echarts/charts";
+import {
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+} from "echarts/components";
+import VChart from "vue-echarts";
+
+use([
+  CanvasRenderer,
+  GridComponent,
+  PieChart,
+  LineChart,
+  TitleComponent,
+  TooltipComponent,
+  LegendComponent,
+]);
+
+export default {
+  name: "EChart",
+  components: {
+    VChart,
+  },
+  methods: {
+    labelFilter(obj) {
+      console.log(obj)
+      if (obj.dataIndex === 0) {
+        return "Durchschnitt"
+      } else {
+        return ""
+      }
     },
-    data() {
-      return {
-        option: {
-          title: {
-            text: "Traffic Sources",
-            left: "center",
-          },
-          tooltip: {
-            trigger: "item",
-            formatter: "{a} <br/>{b} : {c} ({d}%)",
-          },
-          legend: {
-            orient: "vertical",
-            left: "left",
+    labelFilter2(obj) {
+      console.log(obj)
+      if (obj.dataIndex === 0) {
+        return "75%-Quantil"
+      } else {
+        return ""
+      }
+    },
+  },
+  data() {
+    return {
+      array: [
+        { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }, { dataIndex: 0 }
+      ],
+      labelFilter3: (obj) => obj.dataIndex % 3 === 0 ? console.log(obj) : '',
+      option: {
+
+        tooltip: {
+          trigger: "item",
+          formatter: "{b} : {c} ({d}%)",
+        },
+        series: [
+          {
+            name: "Traffic Sources",
+            type: "pie",
+            radius: "55%",
+            center: ["50%", "60%"],
+            color: ["#FCCAAC", "#BAC8AD", "#FEE9BA", "#FEE9BA", "#FEE9BA", "#82A7C8"],
+            itemStyle: {
+              borderWidth: 2,
+              borderColor: '#fff'
+            },
+            label: {
+              formatter: "{b} {d}%"
+            },
             data: [
-              "Direct",
-              "Email",
-              "Ad Networks",
-              "Video Ads",
-              "Search Engines",
+              { value: 39.7, name: "Unternehmen" },
+              { value: 16.4, name: "Selbstständige" },
+              { value: 3.9, name: "Rest" },
+              { value: 5.6, name: "Ratenkredite" },
+              { value: 33.8, name: "Wohnungsbau" },
+              { value: 0.6, name: "Organsiationen ohne Erwerbszweck" },
             ],
-          },
-          series: [
-            {
-              name: "Traffic Sources",
-              type: "pie",
-              radius: "55%",
-              center: ["50%", "60%"],
-              data: [
-                { value: 335, name: "Direct" },
-                { value: 310, name: "Email" },
-                { value: 234, name: "Ad Networks" },
-                { value: 135, name: "Video Ads" },
-                { value: 1548, name: "Search Engines" },
-              ],
-              emphasis: {
-                itemStyle: {
-                  shadowBlur: 10,
-                  shadowOffsetX: 0,
-                  shadowColor: "rgba(0, 0, 0, 0.5)",
-                },
+            emphasis: {
+              itemStyle: {
+                shadowBlur: 10,
+                shadowOffsetX: 0,
+                shadowColor: "rgba(0, 0, 0, 0.5)",
+                borderWidth: 1,
+
               },
             },
-          ],
+          },
+        ],
+      },
+      option2: {
+        xAxis: {
+          type: 'category',
+          data: ['2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008'],
+          boundaryGap: true,
+          splitArea: {
+            show: true
+          }
         },
-      };
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .chart {
-    height: 50%;
-  }
-  </style>
-  
-  <style>
-  body {
-    margin: 0;
-  }
-  </style>
+        yAxis: {
+          type: 'value',
+          min: 90,
+          max: 190,
+          splitNumber: 9,
+        },
+        series: [
+          {
+            data: [121.9, 112.76, 129.73, 130.63, 127.07, 104.8, 113.54, 122.03],
+            type: 'line',
+            symbol: "none",
+            stack: "y",
+            color: "#F79665",
+            label: {
+              show: false,
+              formatter: function (params) {
+                console.log(params) // this is my y column
+                return ">tes"
+              },
+              position: "top",
+              //distance: -30,
+              //textBorderWidth: 2,
+              //textBorderColor: 'white',
+            },
+          },
+          {
+            data: [166.56, 160.03, 164.39, 175.26, 157.43, 140.6, 131.4, 147.7],
+            type: 'line',
+            symbol: "none",
+            color: "#FCC9AA",
+            stack: "x",
+            label: {
+              show: true,
+              formatter: this.labelFilter2,
+              position: "top",
+              //distance: -30,
+              //textBorderWidth: 2,
+              //textBorderColor: 'white',
+            },
+          }
+        ]
+      }
+    };
+  },
+};
+</script>
+
+
+<style>
+body {
+  margin: 0;
+}
+</style>
