@@ -1,7 +1,4 @@
 import HelloWorld from "./components/HelloWorld"
-import VegaLinie from "./components/vega/vegaLinie"
-import VegaBalken from "./components/vega/vegaBalken"
-import VegaKreis from "./components/vega/vegaKreis"
 import EChartsLinie from "./components/echarts/echartsLinie"
 import EChartsBalken from "./components/echarts/echartsBalken"
 import EChartsKreis from "./components/echarts/echartsKreis"
@@ -14,9 +11,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     { path: '/', component: HelloWorld },
-    { path: '/vega/linie', component: VegaLinie },
-    { path: '/vega/balken', component: VegaBalken },
-    { path: '/vega/kreis', component: VegaKreis },
     { path: '/echarts/linie', component: EChartsLinie },
     { path: '/echarts/balken', component: EChartsBalken },
     { path: '/echarts/kreis', component: EChartsKreis },

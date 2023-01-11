@@ -1,29 +1,5 @@
 <template>
   <v-container>
-
-    <h1>
-      Vega
-    </h1>
-
-    <v-row>
-      <v-col cols="4">
-        <v-card color="black" height="100" to="/vega/linie">
-          Linien
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card color="black" height="100" to="/vega/balken">
-          Balken
-        </v-card>
-      </v-col>
-      <v-col cols="4">
-        <v-card color="black" height="100" to="/vega/Kreis">
-          Kreis
-        </v-card>
-      </v-col>
-    </v-row>
-
-
     <h1>
       ECharts
     </h1>
