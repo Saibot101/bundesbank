@@ -5,6 +5,7 @@ import VegaKreis from "./components/vega/vegaKreis"
 import EChartsLinie from "./components/echarts/echartsLinie"
 import EChartsBalken from "./components/echarts/echartsBalken"
 import EChartsKreis from "./components/echarts/echartsKreis"
+import EChartsKreis2 from "./components/echarts/echartsKreis2"
 import ApexLinie from "./components/apex/apexLinie"
 import ApexBalken from "./components/apex/apexBalken"
 import ApexKreis from "./components/apex/apexKreis"
@@ -19,6 +20,7 @@ const routes = [
     { path: '/echarts/linie', component: EChartsLinie },
     { path: '/echarts/balken', component: EChartsBalken },
     { path: '/echarts/kreis', component: EChartsKreis },
+    { path: '/echarts/kreis2', component: EChartsKreis2 },
     { path: '/apex/linie', component: ApexLinie },
     { path: '/apex/balken', component: ApexBalken },
     { path: '/apex/kreis', component: ApexKreis },
