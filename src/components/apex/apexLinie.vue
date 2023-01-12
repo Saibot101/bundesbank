@@ -1,7 +1,19 @@
 <template>
-  <div>
-    <apexchart width="500" type="line" :options="chartOptions" :series="series"></apexchart>
-  </div>
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-img src="../../assets/line_neu.png">
+          </v-img>
+        </v-card>
+      </v-col>
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <apexchart width="500" height="350" type="line" :options="chartOptions" :series="series"></apexchart>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 import VueApexCharts from 'vue3-apexcharts'

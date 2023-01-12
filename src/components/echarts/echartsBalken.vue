@@ -1,7 +1,20 @@
 <template>
-  <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
-    <v-chart :option="option" />
-  </v-card>
+
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-img src="../../assets/bar_points.png">
+          </v-img>
+        </v-card>
+      </v-col>
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-chart :option="option" />
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 <script>
 import { use } from "echarts/core";
@@ -39,14 +52,14 @@ export default {
             type: 'shadow'
           }
         },
-        backgroundColor:"#D4D5D7",
+        backgroundColor: "#D4D5D7",
         legend: {},
         grid: {
           left: '3%',
           right: '4%',
           bottom: '3%',
           containLabel: true,
-          show:false
+          show: false
         },
         xAxis: {
           type: 'value',
@@ -54,20 +67,20 @@ export default {
         },
         yAxis: {
           type: 'category',
-          data: ['Energieversorgung/ Förderung fossiler Stoffe', 'Land- und Forstwirtschaft', 'Bergbau', 'Verarbeitendes Gewerbe', 'Verkehr und Lagerei', 'Handel','Bau, Wasserversorgung, Abfallentsorgung','Sonstige Dienstleistungen','Öffentlicher Sektor','Finanz- und Wohnungswesen','Gesundheitswesen']
+          data: ['Energieversorgung/ Förderung fossiler Stoffe', 'Land- und Forstwirtschaft', 'Bergbau', 'Verarbeitendes Gewerbe', 'Verkehr und Lagerei', 'Handel', 'Bau, Wasserversorgung, Abfallentsorgung', 'Sonstige Dienstleistungen', 'Öffentlicher Sektor', 'Finanz- und Wohnungswesen', 'Gesundheitswesen']
         },
         series: [
           {
             name: 'Wertschöpfungsverluste im Gesamtzeitraum 2021',
             type: 'bar',
-            color:"#00A94E",
-            data: [6.6314, 2.9636, 1.4281, 23.8403, 5.6340, 9.2936,5.3362,23.8457,4.2385,12.6227,4.1661]
+            color: "#00A94E",
+            data: [6.6314, 2.9636, 1.4281, 23.8403, 5.6340, 9.2936, 5.3362, 23.8457, 4.2385, 12.6227, 4.1661]
           },
           {
             name: 'Wertschöpfungsverluste im Gesamtzeitraum 2021',
             type: 'scatter',
-            color:"#000",
-            data: [2.2778, 0.7268, 0.1877, 22.7583, 5.6024, 9.0983,6.3263,25.4782,7,15.1467,7.6170]
+            color: "#000",
+            data: [2.2778, 0.7268, 0.1877, 22.7583, 5.6024, 9.0983, 6.3263, 25.4782, 7, 15.1467, 7.6170]
           },
         ]
       }

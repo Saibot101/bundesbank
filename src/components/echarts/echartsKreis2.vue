@@ -2,7 +2,12 @@
   <v-container>
     <v-row justify="center" align="center">
       <v-col class="d-flex flex-column justify-center align-center">
-        Stand 2018
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-img src="../../assets/kreis_neu.png">
+          </v-img>
+        </v-card>
+      </v-col>
+      <v-col class="d-flex flex-column justify-center align-center">
         <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
           <v-chart :option="option" />
         </v-card>

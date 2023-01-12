@@ -1,7 +1,21 @@
 <template>
-  <div>
-    <apexchart width="500" type="bar" :options="chartOptions" :series="series"></apexchart>
-  </div>
+  <v-container>
+    <v-row justify="center" align="center">
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <v-img src="../../assets/bar_points.png">
+          </v-img>
+        </v-card>
+      </v-col>
+      <v-col class="d-flex flex-column justify-center align-center">
+        <v-card outlined elevation="1" height="350" width="500" class="mt-5 pb-n5">
+          <apexchart width="500" height="350" type="bar" :options="chartOptions" :series="series"></apexchart>
+        </v-card>
+      </v-col>
+    </v-row>
+  </v-container>
+
+
 </template>
 
 <script>
@@ -19,30 +33,34 @@ export default {
           id: 'vuechart-example',
           background: '#D4D5D7',
         },
-        grid:{
-          show:false
+        grid: {
+          show: false
         },
         plotOptions: {
           bar: {
             horizontal: true
           }
         },
-        xaxis:{
-          min:0,
-          max:30,
-          tickAmount:6,
-          axisBorder:{
-            show:true,
-            color:"#fff"
+        legend:{
+          show:true,
+          position:"top"
+        },
+        xaxis: {
+          min: 0,
+          max: 30,
+          tickAmount: 6,
+          axisBorder: {
+            show: true,
+            color: "#fff"
           },
-          axisTicks:{
-            color:"#fff"
+          axisTicks: {
+            color: "#fff"
           }
         },
-        yaxis:{
-          axisBorder:{
-            color:"#fff",
-            show:true
+        yaxis: {
+          axisBorder: {
+            color: "#fff",
+            show: true
           }
         },
         dataLabels: {
@@ -51,7 +69,7 @@ export default {
       },
       series: [{
         name: 'Wertschöpfungsverluste im Gesamtzeitraum 2021',
-        color:"#00A94E",
+        color: "#00A94E",
         data: [{
           x: 'Energieversorgung/ Förderung fossiler Stoffe',
           y: 6.6314,

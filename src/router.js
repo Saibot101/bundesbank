@@ -1,5 +1,6 @@
 import HelloWorld from "./components/HelloWorld"
 import EChartsLinie from "./components/echarts/echartsLinie"
+import EChartsLinie2 from "./components/echarts/echartsLinie2"
 import EChartsBalken from "./components/echarts/echartsBalken"
 import EChartsKreis from "./components/echarts/echartsKreis"
 import EChartsKreis2 from "./components/echarts/echartsKreis2"
@@ -12,6 +13,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 const routes = [
     { path: '/', component: HelloWorld },
     { path: '/echarts/linie', component: EChartsLinie },
+    { path: '/echarts/linie2', component: EChartsLinie2 },
     { path: '/echarts/balken', component: EChartsBalken },
     { path: '/echarts/kreis', component: EChartsKreis },
     { path: '/echarts/kreis2', component: EChartsKreis2 },
