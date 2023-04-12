@@ -53,6 +53,17 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <h1>
+      Proof of Concept
+    </h1>
+    <v-row>
+      <v-col cols="4">
+        <v-card height="100" to="/echarts/poc">
+          PoC
+        </v-card>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 

@@ -4,6 +4,7 @@ import EChartsLinie2 from "./components/echarts/echartsLinie2"
 import EChartsBalken from "./components/echarts/echartsBalken"
 import EChartsKreis from "./components/echarts/echartsKreis"
 import EChartsKreis2 from "./components/echarts/echartsKreis2"
+import EChartsPoC from "./components/echarts/pocChart"
 import ApexLinie from "./components/apex/apexLinie"
 import ApexBalken from "./components/apex/apexBalken"
 import ApexKreis from "./components/apex/apexKreis"
@@ -17,6 +18,7 @@ const routes = [
     { path: '/echarts/balken', component: EChartsBalken },
     { path: '/echarts/kreis', component: EChartsKreis },
     { path: '/echarts/kreis2', component: EChartsKreis2 },
+    { path: '/echarts/poc', component: EChartsPoC },
     { path: '/apex/linie', component: ApexLinie },
     { path: '/apex/balken', component: ApexBalken },
     { path: '/apex/kreis', component: ApexKreis },
